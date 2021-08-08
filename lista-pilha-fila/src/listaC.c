@@ -327,6 +327,7 @@ void menorCustoTotal(ListaProduto *LProduto, ListaMercado *LMercado, ListaPreco 
 	printf("Menor compra R$%.2f\n", menorCompra);
 }
 
+
 void stopLC()
 {
 	printf("\n\nPressione qualquer tecla para continuar...");

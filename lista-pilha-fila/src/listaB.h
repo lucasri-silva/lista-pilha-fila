@@ -26,5 +26,6 @@ void subtrairValorAleatorio(ListaA *LA, ListaB *LB);
 void LAImprime(ListaA *l);
 void LBImprime(ListaB *l);
 void somaElementos(ListaA *LA, ListaB *LB);
+void stopLB();
 
 #endif

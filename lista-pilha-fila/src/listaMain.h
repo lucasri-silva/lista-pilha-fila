@@ -45,6 +45,7 @@ int listaB()//PROBLEMA LISTA B
 	LAImprime(&LA);
 	LBImprime(&LB);
 	somaElementos(&LA, &LB);
+	stopLB();
 
 	return 0;
 }

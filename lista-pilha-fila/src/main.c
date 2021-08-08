@@ -1,4 +1,6 @@
 #include "listaMain.h"
+#include "pilhaMain.h"
+#include "filaMain.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -27,20 +29,46 @@ int main()
 					stop();
 				}
 				else if(opcao == 2)
-				{
 					listaB();
-					stop();
-				}
 				else if(opcao == 3)
-				{
 					listaC();
-				}
 				break;
 			case 2:
+				system("cls||clear");
+				printf("PROBLEMAS PILHA:\n1. Problema A\n2. Problema B\n3. Problema C\n\nEscolha uma opção: ");
+				scanf("%d", &opcao);
+				while((getchar() != '\n'));
+				if(opcao == 1)
+				{
+					pilhaA();
+					stop();
+				}
+/*				else if(opcao == 2)*/
+/*				{*/
+/*					pilhaB();*/
+/*					stop();*/
+/*				}*/
+				else if(opcao == 3)
+				{
+					pilhaC();
+					stop();
+				}
 				break;
 			case 3:
-				break;
-			case 4:
+				system("cls||clear");
+				printf("PROBLEMAS FILA:\n1. Problema A\n2. Problema B\n\nEscolha uma opção: ");
+				scanf("%d", &opcao);
+				while((getchar() != '\n'));
+				if(opcao == 1)
+				{
+					filaA();
+					stop();
+				}
+/*				else if(opcao == 2)*/
+/*				{*/
+/*					//pilhaB();*/
+/*					//stop();*/
+/*				}*/
 				break;
 			default:
 				on=false;

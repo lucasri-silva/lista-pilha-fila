@@ -118,3 +118,10 @@ void somaElementos(ListaA *LA, ListaB *LB)
 	else
 		printf("\nLista 2 é a vencedora!\nSoma final = %d\n", somaLB);
 }
+
+void stopLB()
+{
+	printf("\n\nPressione qualquer tecla para continuar...");
+	getchar();
+	system("cls||clear");
+}
