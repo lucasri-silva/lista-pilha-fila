@@ -43,3 +43,49 @@ CADASTRO PREÇO:</br>Entre o identificador do mercado: 2 (BH)</br>Entre o identi
 <p>Um mesmo item pode ser adicionado mais de uma vez ao carrinho, para isso entre novamente o seu identificador.</p>
 <p>Finalizando a compra, temos:</p>
 <p>CARRINHO:</br>Produto, Quantidade:</br>arroz, 1</br></br>Produto: arroz, Menor Preço R$16, Mercado: BH</br>Menor compra R$16.00</p>
+
+<h3>Problema 2: PILHAS</h3>
+<h4>Problema A</h4>
+<p>O problema consiste em escrever um programa que utilize uma pilha para verificar se expressões aritméticas estão com a parentização correta. O programa deve verificar as expressões para ver se cada “abre parênteses” tem um “fecha parênteses”.</p>
+<p>Exemplo:</br>Correto -> ( ( ) ) – ( ( )( ) ) –( ) ( )</br>Errado -> ( ( ) – ( ( )( ) ) – ( ) ( ).<p/>
+<p>Neste problema foi utilizado a estrutura estática porque levei em consideração que a grande maioria das operações aritméticas que trabalhamos não possui substancial quantidade de parênteses. Além disso, a função parentizacao, que adiciona ao vetor os parênteses encontrados durante a varredura da equação, faz o POP de parênteses '(' da pilha quando o próximo parênteses no loop é ')'. Dessa forma, quando o padrão () é formado na comparação do elemento atual do loop com o elemento do topo da pilha ocorre o POP, fazendo com que a quantidade de posições disponíveis dentro do vetor pilha seja dinâmica ao longo da iteração.</p> 
+<p>Seguindo essa linha de raciocínio, acabada a iteração se a base da pilha corresponder ao topo significa que a expressão aritmética tem parentização correta, do contrário restaram parênteses sem seu respectivo complementar.</p>
+if (p->base == p->top)printf("Parentização da expressão aritmética CORRETA\n");</br>
+else printf("Parentização da expressão aritmética INCORRETA\n");
+
+<h4>Problema B:</h4>
+<p>Não implementado</p>
+
+<h4>Problema C:</h4>
+<p>Neste problema foi utilizado a estrutura estática, já que é proposto uma pilha com 20 posições previamente preenchidas com números inteiros aleatórios entre 1 e 99.</p>
+<p>O problema consiste em elaborar uma função totiente de Euler que percorra cada elemento da pilha e encontre para esse número os co-primos.</p>
+<p>Primeiramente, vamos definir quando dois números são co-primos. Quando dois números (eles podem não ser primos) não possuem nenhum fator comum além de um entre eles, eles são chamados de co-primos ou relativamente primos. Exemplo.: 4 e 9 são co-primos.</p>
+<p>Para calcularmos os co-primos de um número podemos seguir o seguinte raciocínio:
+</br>Primeiro calculamos os fatores do número. Em seguida, analisamos todos os números que precedem o número em questão. Se o número analisado é multíplo de pelo menos um dos fatores do número que estamos a calcular os co-primos, então esse número não é seu co-primo</p>
+<p>Exemplo:</br>
+Calcular os co-primos de 21:</br>
+Fatores de 21: 3 x 7</br>
+Listamos os números que antecedem o número 21:</br>
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20</br>
+Dentre os números acima ignoramos aqueles que são multíplos dos cofatores de 21, são eles: 3 e 7.</br>
+Logo, os co-primos de 21 são:</br>
+1, 2, 4, 5, 8, 10, 11, 13, 16, 17, 19, 20<p>
+
+<p>Procedimentos:</br>
+Foi criado uma função para calcular os fatores de um número. Para isso pegamos o número e o dividimos por números a partir de 2. Se há resto significa que o divisor não é fator do número em questão e o incrementamos em uma unidade. Se não há resto então o divisor é fator do número em questão, acrescentamos esse ao vetor fatores e atualizamos o número em questão pelo resultado da divisão. Fazemos essa iteração até que o número em questão seja igual a 1.</br>
+Obtendo os fatores do número podemos agora percorrer todos os números anteriores ao número que se deseja obter os co-primos e os compararmos. Foi criado outro vetor com o nome de coprimos para armazena-los à medida em que forem sendo encontrados. Se o número analisado não for múltiplo de nenhum dos fatores encontrados então esse número será um co-primo. Se o número for múltiplo de pelo menos um dos fatores então break loop e passa para o sucessor. Esse processo ocorre até que o número analisado seja o número que se deseja obter os co-primos - 1.</br>
+No final de cada iteração para um determinado número que se deseja saber seus co-primos é imprimido os seus fatores e co-primos. Logo após isso é feito o POP desse número da pilha. Quando p->top-1 = p->base chegamos ao fim da execução.</p>
+
+<h3>Problema 3: FILAS</h3>
+<h4>Problema A</h4>
+<p>Obs.:Não consegui implementar por completo. </p>
+<p>O problema consiste em usar o binômio de Newton para expandir expressões binomiais do tipo (x + y)^ĸ. Para isso serão usadas duas filas: uma armazenará expressões binomiais do tipo (x + y)^ĸ e a outra será usada para armazenar os resultados de cada expansão.</p>
+<p>O usuário insere a partir da função EnfileiraBinomio(FilaBinomio *f, char x, char y, int k, char s) a função em seu formato inicial na FilaBinomio. A função binomioNewton(FilaBinomio *f) calcula a forma expandida da função armazenada na posição um da fila.</p>
+<p>A função binomial(int k, int i) e a função binomioNewton(FilaBinomio *f) quebram o problema em duas partes. A binomial realiza o binômio da fórmula, enquanto que a binomioNewton faz a iteração e condições. A cada iteração é imprimido uma parcela da equação expandida.</br>
+printf("(%d%c**%d.%c**%d)", binomial(k, i), x, expoenteX, y, i), onde binomial(k, i) representa o binômio da fórmula (coeficiente de x) e i o expoente de y.</p>
+
+<h4>Problema B</h4>
+<p>Não implementado</p>
+
+<h3>Problema 4: FILA, PILHA e FILA</h3>
+<p>Não implementado</p>
